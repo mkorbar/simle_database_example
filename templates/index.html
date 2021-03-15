@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Primer iz baze</title>
+</head>
+<body>
+    <h1>Preprost primer uporabe podatkovnih baz</h1>
+{% if user_data %}
+    <p>Hello {{ user_data.name }}!</p>
+    <p>Your email address is {{ user_data.email }}</p>
+{% else %}
+    <form action="/login" method="post">
+        <input type="text" name="user-name" placeholder="Vpisi ime"><br>
+        <input type="email" name="user-email" placeholder="Vpisi email"><br>
+
+        <button type="submit">Poslji podatke</button>
+    </form>
+{% endif %}
+</body>
+</html>
